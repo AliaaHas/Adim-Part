@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { passwordMatchValidator } from 'src/app/CustomValidator/passwordvalidation';
 import { forbiddenNameValidator } from 'src/app/CustomValidator/UserNameValidator';
 import { UserAuthService } from 'src/app/Services/user-auth.service';
@@ -18,9 +19,10 @@ userregisterformgroup:FormGroup;
 
   constructor(private fb: FormBuilder,
     private userAuthservice:UserAuthService,
-    private router:Router) {
+    private router:Router,
+    private toast :NgToastService ) {
     this.userregisterformgroup = fb.group({
-      username: ['', [Validators.required, Validators.minLength(3),forbiddenNameValidator]],
+      name: ['', [Validators.required, Validators.minLength(3),forbiddenNameValidator]],
       email: ['',Validators.email],
       // mobileNo: fb.array([fb.control('')]),
       // address: fb.group({
@@ -76,10 +78,9 @@ userregisterformgroup:FormGroup;
   register(){
     this.userAuthservice.Register(this.userregisterformgroup.value)
     .subscribe(user=>{
-
-      console.log(user)
     });
-      this.router.navigate(['/Home']);
+    this.toast.success({detail:"Registeration Success " ,duration:5000})
+
 
 
   }

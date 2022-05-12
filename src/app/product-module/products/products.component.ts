@@ -207,21 +207,16 @@ Swal.fire({
     if (result.isConfirmed) {
     this.prdApiservice.deleteproduct(id).subscribe(
       response=>{
-        Swal.fire(
-          'The Internet?',
-          'That thing is still around?',
-          'question'
-        )
+
+        this.toast.success({detail:"Deleted Success " ,duration:5000})
 
       }
     );
 
   } else if (result.isDismissed) {
-    Swal.fire(
-      'The Internet?',
-      'That thing is still around?',
-      'question'
-    )
+    this.toast.info({detail:"Not deleted " ,duration:5000})
+
+
   }
 
 });
@@ -233,7 +228,7 @@ Swal.fire({
 
 }
 Edit(item:IProduct){
-  
+
 
 
 }

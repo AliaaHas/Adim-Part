@@ -27,9 +27,9 @@ export class UserAuthService {
 
   Register(newUser:IUser): Observable<IUser>
   {
-    console.log('wwwwwwwww');
 
-   return this.HttpClientService.post<IUser>(`http://localhost:44386/api/Account/Register`, JSON.stringify(newUser),this.HttpOptions);
+
+   return this.HttpClientService.post<IUser>(`https://localhost:44386/api/Account/Register`, JSON.stringify(newUser),this.HttpOptions);
   }
 
 
