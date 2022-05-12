@@ -1,0 +1,22 @@
+.itemdata{
+white-space: nowrap;
+ overflow: hidden; 
+ text-overflow: ellipsis; 
+ max-width: 100ch;
+}
+
+.cart{
+  padding: 20px;
+  margin: 40px;
+}
+
+.cart img{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: .3s ease-in-out;
+}
+.cart img :hover{
+  transition: .3s ease-in-out;
+ transform: scale(1,1);
+}

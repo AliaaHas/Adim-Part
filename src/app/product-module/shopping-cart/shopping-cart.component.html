@@ -1,0 +1,79 @@
+
+
+
+
+  <div class="mb-3">
+    <label for="" class="form-label">Select Category</label>
+    <select class="form-control" name="" id="CatCel" [(ngModel)]="SelectedCategoryID">
+      <option value="0">SelectedCategory</option>
+      <option *ngFor="let category of CategoryList" [value]="category.id">{{category.name}}</option>
+
+    </select>
+  </div>
+  <br>
+  <div class="bg-Warming">
+  <app-products [RecivedSelectedCategoryId] ="SelectedCategoryID"
+
+       (OnBuyDone)="AddToCart($event)"></app-products>
+</div>
+
+<br>
+
+<!-- <table class="table caption-top">
+  <caption>Card</caption>
+  <thead>
+    <tr > -->
+      <!-- <th scope="col">ProductID</th> -->
+      <!-- <th scope="col">ProductName</th>
+      <th scope="col">SelectedQuantity</th>
+      <th scope="col">UnitPrice</th>
+      <th scope="col">BtnDetails</th>
+      <th scope="col">BtnRemove</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let item of CartItem"> -->
+      <!-- <th scope="row">{{item.ProductID}}</th> -->
+      <!-- <td>{{item.ProductName}} </td> -->
+
+
+
+<!--
+      <td>
+        <button type="button" class="btn btn-secondary" (click)="Increase(itemcount)">+</button> -->
+        <!-- <input   type="text"/> -->
+        <!-- <textarea #itemcount>
+                 {{item.SelectedQuantity}}
+        </textarea> -->
+
+        <!-- <button type="button" class="btn btn-secondary" (click)="Decrease(itemcount)">-</button>
+
+      </td> -->
+      <!-- <td><input type="number" (change)="function($event)">{{Quant}}</td> -->
+      <!-- <td>{{item.UnitPrice}}</td> -->
+
+      <!-- <td><button type="button" class="btn btn-secondary"
+         (click)="OpenDetails(item.ProductId)">Details</button></td> -->
+
+         <!-- <td>
+           <a name="" id="" class="btn btn-secondary"
+           role="button" [routerLink]="['/Products',item.ProductId]">Details</a>
+          </td>
+
+      <td><button type="button" class="btn btn-secondary"
+         (click)="RemoveFromCard(item.ProductId)">Remove</button></td>
+        </tr>
+  </tbody> -->
+
+<!-- </table> -->
+<!-- <div>
+    <label>Order Total Price: </label>
+    <input type="text" (change)="CalTotalPrice(itemcount ,item)">
+  </div> -->
+
+  <!-- <button class="btn-btn-secondary" #placeorder (click)="checkout()">Place Order</button> -->
+
+

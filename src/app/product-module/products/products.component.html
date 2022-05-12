@@ -1,0 +1,38 @@
+
+
+    <table class="table table-dark">
+
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+         <th scope="col">Image</th>
+         <th scope="col">Add Product</th>
+        <th scope="col">Edit Product</th>
+         <th scope="col">Delete Product</th>
+
+
+
+      </tr >
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ProductListOfCategory">
+
+
+
+
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+        <td><img src="https://localhost:44386/Resources/Images/{{item.image}}" style="width:100px;">
+        </td>
+
+        <td><button routerLink="/Product/AddProduct" class="btn btn-primary">Add Product</button></td>
+        <td><button routerLink="/Product/AddProduct/{{item.id}}" (click)="Edit(item)" class="btn btn-primary">Edit Product</button></td>
+        <td><button (click)="DeleteProduct(item.id)" class="btn btn-primary"> Delete Product</button></td>
+
+
+      </tr>
+    </tbody>
+  </table>
