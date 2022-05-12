@@ -15,8 +15,7 @@ export class ProductDetailsComponent implements OnInit {
 
   private CurrentPrdID:number=0;
   private ProductIDList:number[]=[];
-    // private PreviousPrdID:number=0;
-    // private NextPrdID:number=0;
+
 
 
 
@@ -39,11 +38,6 @@ export class ProductDetailsComponent implements OnInit {
     console.log(this.activateroute.params);
 
 
-  // //alert(this.PrdID);
-  // this.product=this.productservice.getProductByID(this.CurrentPrdID);
-  // this.activateroute.paramMap.subscribe(parammap=>{
-  //   this.CurrentPrdID=Number(parammap.get("ID"));
-  //   this.product=this.productservice.getProductByID(this.CurrentPrdID);
 
   })
 
@@ -70,7 +64,6 @@ this.location.back();
   NextProduct(){
     let Index=this.ProductIDList.findIndex((val)=>val==this.CurrentPrdID);
 
-    //alert(Index);
     if(Index<this.ProductIDList.length-1){
       this.CurrentPrdID=this.ProductIDList[Index+1];
       this.router.navigate(['/Products',this.CurrentPrdID])

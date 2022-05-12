@@ -33,12 +33,22 @@ export class UserAuthService {
   }
 
 
-  Login(Email:string, Password:string)
+
+  Login(data:IUser): Observable<any>
   {
-     var UserToken=`UserEmail:${Email},Password:${Password}Key:SecretKey2222`
-     localStorage.setItem("token",UserToken);
-     this.ISLoggedSubject.next(true);
+
+
+   return this.HttpClientService.post<IUser>(`https://localhost:44386/api/Account/Login`,  JSON.stringify(data),this.HttpOptions);
   }
+
+
+
+  // Login(Email:string, Password:string)
+  // {
+  //    var UserToken=`UserEmail:${Email},Password:${Password}Key:SecretKey2222`
+  //    localStorage.setItem("token",UserToken);
+  //    this.ISLoggedSubject.next(true);
+  // }
   // Logout()
   // {
   //    localStorage.removeItem("token");

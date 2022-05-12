@@ -29,7 +29,6 @@
       <option *ngFor="let cat of CategoryList" [value]="cat.id">{{cat.name}}</option>
     </select>
   </div>
-  <!-- <app-upload (onuploadfinished)="uploadfinished($event)"></app-upload> -->
   <div class="mb-3">
     <label for="pImg" class="form-label">Product Image</label>
     <input  #file type="file" (change)="uploadfile(file.files,file.value)"

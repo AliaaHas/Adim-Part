@@ -2,6 +2,7 @@ import{NgToastModule} from 'ng-angular-popup'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{HttpClientModule} from "@angular/common/http";
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { LogInComponent } from './LogIn/log-in/log-in.component';
 import { RegisterComponent } from './Regsteration/register/register.component';
 import { CategoryComponent } from './category/category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -50,8 +52,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgToastModule,
 
     BrowserAnimationsModule,
+    JwtModule
+
 
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

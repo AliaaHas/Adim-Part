@@ -82,9 +82,9 @@ export class AddProductComponent implements OnInit  {
 
   Saveproduct(){
 
-if(this.newPrd.id==0){
+if(this.newPrd.id){
   this.prdApiserver.addNewProduct(this.newPrd).subscribe(prd=>{
-    // this.response?.dbpath
+
     this.route.navigateByUrl('/Product/Products')
 
   });
@@ -117,17 +117,16 @@ if(this.newPrd.id==0){
       .subscribe({
         next: (event) => {
         if (event.type === HttpEventType.UploadProgress){}
-          // this.progress = Math.round(100 * event.loaded / event.total);
         else if (event.type === HttpEventType.Response) {
 
                this.newPrd.image=Myfile.split('\\')[2];
                console.log(this.newPrd.image);
                this.message = 'Upload success.';
 
-          //this.onUploadFinished.emit(event.body);
+
         }
       },
-      //error: (err: HttpErrorResponse) => console.log(err)
+
     });
   }
 }

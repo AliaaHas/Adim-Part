@@ -52,14 +52,7 @@ export class ProductsComponent implements OnInit, OnChanges,AfterViewInit {
 envi:string=`${environment.APIUEL}/Resources/Images/`;
 
   Productlist:any;
-  productitem:IProduct={
-    id:0,
-    name:'',
-    price:0,
-    quantity:0,
-    catID:0,
-    image:""
-  }
+ 
   cartlist:IProduct[]=[];
 
   constructor(

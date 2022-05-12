@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserAuthService } from 'src/app/Services/user-auth.service';
 
@@ -9,21 +11,25 @@ import { UserAuthService } from 'src/app/Services/user-auth.service';
 })
 export class LogInComponent implements OnInit {
 
-  Email:string;
-  Password:string;
+
   constructor(private userAuthservice:UserAuthService,
-    private router:Router) {
-      this.Email="";
-    this.Password="";
+    private router:Router,
+    private http:HttpClient) {
+
     }
 
+
   ngOnInit(): void {
+
   }
+
+
+
 
   Login()
   {
-    this.userAuthservice.Login(this.Email,this.Password);
-    this.router.navigate(['/Home']);
+
+
   }
 
-}
+  }

@@ -81,7 +81,7 @@ userregisterformgroup:FormGroup;
     });
     this.toast.success({detail:"Registeration Success " ,duration:5000})
 
-
+this.router.navigateByUrl('/Home')
 
   }
 
