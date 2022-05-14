@@ -3,8 +3,8 @@
 
 
   <div class="mb-3">
-    <label for="" class="form-label">Select Category</label>
-    <select class="form-control" name="" id="CatCel" [(ngModel)]="SelectedCategoryID">
+    <label for="" class="form-label" >Select Category</label>
+    <select class="form-control" name="" id="CatCel" [(ngModel)]="SelectedCategoryID" style="width:fit-content">
       <option value="0">SelectedCategory</option>
       <option *ngFor="let category of CategoryList" [value]="category.id">{{category.name}}</option>
 
