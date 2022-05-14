@@ -8,7 +8,6 @@
         <th scope="col">Quantity</th>
         <th scope="col">Price</th>
          <th scope="col">Image</th>
-         <th scope="col">Add Product</th>
         <th scope="col">Edit Product</th>
          <th scope="col">Delete Product</th>
 
@@ -28,7 +27,6 @@
         <td><img src="https://localhost:44386/Resources/Images/{{item.image}}" style="width:100px;">
         </td>
 
-        <td><button routerLink="/Product/AddProduct" class="btn btn-primary">Add Product</button></td>
         <td><button routerLink="/Product/AddProduct/{{item.id}}" (click)="Edit(item)" class="btn btn-primary">Edit Product</button></td>
         <td><button (click)="DeleteProduct(item.id)" class="btn btn-primary"> Delete Product</button></td>
 

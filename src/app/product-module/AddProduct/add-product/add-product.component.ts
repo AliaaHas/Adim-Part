@@ -82,7 +82,7 @@ export class AddProductComponent implements OnInit  {
 
   Saveproduct(){
 
-if(this.newPrd.id){
+if(!this.newPrd.id){
   this.prdApiserver.addNewProduct(this.newPrd).subscribe(prd=>{
 
     this.route.navigateByUrl('/Product/Products')
